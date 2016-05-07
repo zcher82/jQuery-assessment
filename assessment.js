@@ -1,46 +1,35 @@
-
 $(document).ready(function() {
+  var counter = 0;
 
-  var counter;
+  $('body').append('<h5 class=clickCounter>"Generate" click counter: <span></span></h5>')
 
+//update counter function
+  function updateCounter () {
+    $('span').text(counter);
+  }
 
+//generate new div container with 2 buttons and increase counter
   $('.generateButton').on('click', function() {
-    $('.container').append('<div class="newContainer"></div>').data('id', counter);
-    var $el = $('.newContainer');
-    $el.append('<button class="delete-button">DELETE</button>');
-    $el.append('<button class="changeColorButton">CHANGE COLOR</button>');
-    $el.append('<h3>Generate click-counter: <span></span></h3>');
-    genButtonCounter();
+    $('body').append('<div class="smallerContainer">' +
+    '<button class="delete">delete</button>' +
+    '<button class="changeColor">change color</button></div>');
+    $('.smallerContainer');
+    counter++;
     console.log(counter);
+    updateCounter();
   });
 
-//change backgorund color
-//  $('.changeColorButton').on('click', '', function() {});
+//delete container with "delete" button click and decrement counter
+  $('body').on('click', '.delete', function() {
+    $(this).parent().remove();
+    counter--;
+    updateCounter();
+  });
 
-
-//delete container
-
-
-
-
-
-
-
-//click counter
-function genButtonCounter() {
-  var counter = 0;
-  $('.generateButton').on('click', function() {
-    counter +=1;
-    return counter;
-  })
-}
-
-
-
-
-
-
-
+//change background-color of container
+  $('body').on('click', '.changeColor', function() {
+    $(this).parent().toggleClass('smallerContainerRed');
+  });
 
 
 

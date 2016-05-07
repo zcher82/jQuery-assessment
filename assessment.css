@@ -1,12 +1,17 @@
+/* * {
+  border: 1px dotted blue;
+}*/
 
-.delete {
-  height: 40px;
-  width: 80px;
-  background-color: red;
+.smallerContainer {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border: 2px solid black;
 }
 
-.change {
-  height: 40px;
-  width: 80px;
-  background-color: green;
+.smallerContainerRed {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 2px solid black;
 }
